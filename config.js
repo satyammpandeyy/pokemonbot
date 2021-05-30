@@ -9,8 +9,8 @@ module.exports = {
     tradechannelid: "840164615781351424",
     suggestionchannelid: "840164615781351424",
 
-    token: "ODQwNTc5MTQ0NTI1MDIxMTg1.YJaQVQ.cMzG4JogKF0_K29OZfsG68btAWg",
-    prefix: ".",
+    token: "ODQwMTA2OTgzNzM4ODM0OTU0.YJTYmQ.VJUKFRvrDT8DQy2dYls4VPGR_4o",
+    prefix: ",",
 
     banAppeal: "",
     owners: ["636158569338634272","838653637395349504","799347403340906537","585022194623447050","413370607036661770","773406008650760202","592949366881255436","791577215980404758"],
@@ -19,13 +19,13 @@ module.exports = {
     dbdevs: ["636158569338634272"],
    
    mongo_atlas: {
-       username: "mrx",
-       password: "imtheowner",
-       cluster: "pokekcord",
-      shard: {
-        one: "pokecord-shard-00-00.lx83s.mongodb.net:27017",
-           two: "pokecord-shard-00-01.lx83s.mongodb.net:27017",
-           three: "pokecord-shard-00-02.lx83s.mongodb.net:27017"
+        username: "meitu",
+        password: "meitu1234",
+        cluster: "meitu",
+        shard: {
+            one: "meitu-shard-00-00.nyrmd.mongodb.net:27017",
+            two: "meitu-shard-00-01.nyrmd.mongodb.net:27017",
+            three: "meitu-shard-00-02.nyrmd.mongodb.net:27017" 
        }
     },
     webhooks: {
