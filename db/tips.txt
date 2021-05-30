@@ -1,0 +1,50 @@
+Bot allows you to change prefix for your server , try p!setprefix
+You can give your pokemon the name of your choice using p!nick
+Stop tryna be good, its only a bot
+Beware , Spamming wont help you level up your pokemon
+If you catch a pokemon you get cash 
+Want money? Try gambling
+Unable to catch good pokemons? Just go to #〢・trading or #〢・market
+Need quick credits? Try posting your Pokemon in #〢・auction-ads or #〢・market
+Want some awesome pokemons? Just donate 
+The more you catch, the more rewards you get from your Pokedex
+Remember,  you cannot increase your pokemon iv , get a new one instead
+No credits to buy candy? Just keep active in chat for free levels
+If u caught all the 898 pokemons and completed dex... You will be rewarded with original magearna and a special role
+Don't leave normal pokemons, they might be shiny sometimes...
+You can also invite bot to your server and play with friends in own guild...
+Trading game stuff with irl money or interbot trading is not accepted and can lead to bot ban
+Do not use auto-catcher, auto-clicker or any scripting like that... It may lead to permanent ban
+Join bot's official discord server to stay updated. use p!support
+Vote for the bot daily to receive amazing rewards. p!daily
+Take and give loans on ur own risk
+Every pokemon is weak against a type, try p!weak <pokemon name> for more informations on that
+Stuck on any command and dont know how to use it? get help p!help <command name>
+As world is fast, so be fast to catch pokemons and use fast pokemons to win duels...
+Make use of shortcuts provided in bot like p!i for p!info , for full list refer p!help
+Just keep the 2 last digit of your bal 69... coz wynaut
+Redeems once used wont be refunded , use your redeem(s) carefully
+Gamble at your own risk... no one is responsible for the money you lost in gamble
+Use in-game pokedex to know more about a pokemon..p!dex <pokemon name>
+Donphans are cute, make sure to catch them all.
+Don't beg anyone for credits or any Pokemon...earn them yourself
+Caught some op pokemons ? Set moves by p!moves  and then duel by p!duel @username
+Arrange your pokemon list using p!order
+You can make a pokemon favourite by using p!fav <pokemon no.>
+User filters to narrow down your pokemon search
+Join bot's official server to participate in exclusive giveaways and events
+Keep your eyes on spawns otherwise you may miss rares
+Keep in mind that you can only catch the most RECENTLY spawned Pokemon , so dont let any poke despawn
+Pokemon spawns are based on how many people are sending messages in the server , so dont spam
+Use the "p!daily" command to get rewards every 12 hours
+You can release your Pokémons for credits with p!release
+Get a hint to the currently spawned pokemon using p!hint
+View your profile using p!profile command
+p!redirect (#channel) redirects all Pokemon spawns into specific channel passed
+When a pokemon appears, the first to correctly p!catch <pokemon name>  it gets it
+You can use p!c as a shortcut for catch
+Pokemon’s level up requirements can be checked with p!pokedex <pokemon name>
+The best way to spawn pokemon is a normal back and forth conversation between multiple people
+Daily challenges like catch a particular poke and get some reward , not special but something decent
+Need some more credits? Catching a specific pokemon 10th time would give u 500 Credits and for the 100th time, u will get 5000 Credits
+Winning duels will give 10 credits to the winner. Those credits would not be subtracted from the lose
