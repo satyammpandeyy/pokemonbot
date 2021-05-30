@@ -1,0 +1,79 @@
+const Discord = require("discord.js");
+const { MessageEmbed, MessageCollector, Collection } = require("discord.js");
+const { get } = require('request-promise-native');
+const User = require('../../models/user.js');
+const Spawn = require('../../models/spawn.js');
+const Guild = require('../../models/guild.js');
+const Pokemon = require("../../Classes/Pokemon.js");
+const { classToPlain } = require("class-transformer");
+const galar = require('../../db/galarians.js');
+let gen8 = require('../../db/gen8.js')
+const ms = require("ms");
+
+
+
+module.exports = {
+  name: "pikachuaa",
+  description: "Claim the Premium Code",
+  category: "Pokemon Commands",
+  args: false,
+  usage: ["claim <premium#code>"],
+  cooldown: 3,
+  permissions: [],
+  aliases: [],
+  execute: async (client, message, args, prefix, guild, color, channel) => {
+  let user = await User.findOne({ id: message.author.id });
+
+  if (!user || !user.pokemons[0]) return message.channel.send("You need to pick a starter pokémon using the \`" + prefix + "start\` command before using this command!");
+
+  let codeembed = new MessageEmbed()
+      .setAuthor("Premium Code")
+      .setDescription("Premium Codes are given out in Bot's Official Server as a reward for winning Giveaways/Events!")
+      .addField("Usage",`\`${prefix}claim <#code>\``)
+      .setFooter(`Joining Official Server have many Benifits! Refer ${prefix}support`)
+      .setColor("#fff200")
+    
+  let codeembed2 = new MessageEmbed()
+      .setAuthor("Choose Your Reward")
+      .setDescription(`Congratulations ${message.author.username} for winning the Giveaway/Event! Please select your reward from the Following:\n\n**#1) Redeem** - Redeem Spawn any Pokemon of your choice/ Redeem Ricks\n**#2) Shards** - Claim 200 Shards! Refer Shop 7 for Items that can be Bought with Shards\n**#3) Ricks** - Claim 100,000 ツ that you can use to Buy variety of Items from The Shop , Market , Other Trainers and etc.\n\n\nReply with **__Cancel__** to cancel the Claiming Process.`)
+      .setFooter("Either reply with the Item Number (1/2/3) or the Reward Name")
+      .setColor("#fff200")
+      //**#4) Shiny** - Get any Random Shiny worth around 100K Ricks.
+      let code = Number(909911);
+      if (!args[0]) return message.channel.send(codeembed)
+      if (args[0]==code){
+      let msg = await message.channel.send(codeembed2);
+      msg.channel.awaitMessages(r => r.author.id == message.author.id, { max: 1, time: 15000, errors: ['time'] })
+      .then(async (collected) => {
+        if (collected.first().content.toLowerCase() === "cancel") return message.channel.send(`Ok Cancelled!`);
+        if (collected.first().content.toLowerCase() === "redeem" || collected.first().content.toLowerCase() === "1") {
+          user.redeems = user.redeems + 1;
+          await user.save();
+          return message.channel.send(`Premium Code Successfully Claimed! You received 1 Redeem.`);
+        }
+        if (collected.first().content.toLowerCase() === "shards" || collected.first().content.toLowerCase() === "2") {
+          user.shards = user.shards + 200;
+          await user.save();
+          return message.channel.send(`Premium Code Successfully Claimed! You received 200 Shards.`);
+        }
+        if (collected.first().content.toLowerCase() === "ricks" ||collected.first().content.toLowerCase() === "3") {
+          user.balance = user.balance + 100000;
+          await user.save();
+          return message.channel.send(`Premium Code Successfully Claimed! You received 100,000 ツ`);
+        }
+        if(collected.first().content.toLowerCase() !== "redeem" ||collected.first().content.toLowerCase() !== "shards" || collected.first().content.toLowerCase() !== "ricks" ||collected.first().content.toLowerCase() !== "shiny"||collected.first().content.toLowerCase() !== "1" ||collected.first().content.toLowerCase() !== "2" ||collected.first().content.toLowerCase() !== "3" ||collected.first().content.toLowerCase() !== "4") return message.channel.send("Inappropriate response. Claim cancelled!")
+        // if (collected.first().content.toLowerCase() === "shiny" ||collected.first().content.toLowerCase() === "4") {
+        //   user.balance = user.balance + 1;
+        //   await user.save();
+        //   return message.channel.send(`Premium Code Successfully Claimed! You received A Random Shiny. Type \`${prefix}info latest\` to Check it out!`);
+        // }
+        }).catch(collected => {
+        var xyz = msg.content
+        return msg.edit(msg.content += "\n\nYou Didn't Respond on Time! Claim cancelled.")
+      })
+    }
+    else{ return message.channel.send("Invalid Code Provided!")
+    }
+  }
+
+}
