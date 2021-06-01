@@ -88,7 +88,7 @@ let embed = new MessageEmbed()
             message.channel.send(`> <a:ME_pokeball:845921718870736926> Congratulations ${message.author}! You have caught a Level ${poke.level} ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}! You received 10 Craft Coins.`);
 
         } else {
-            return message.channel.send("This is the wrong pokémon!")
+            return message.channel.send(`> This is the wrong pokémon!  ${done.join("")}`)
         }
 
     }
