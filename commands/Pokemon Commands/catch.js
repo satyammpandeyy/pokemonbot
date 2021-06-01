@@ -84,11 +84,22 @@ let embed = new MessageEmbed()
             }
             await user.save();
             // user = await User.findOne({ id: message.author.id })
-            
-            message.channel.send(`> <a:ME_pokeball:845921718870736926> Congratulations ${message.author}! You have caught a Level ${poke.level} ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}! You received 10 Craft Coins.`);
+       
+            //
+            let embed = new MessageEmbed()
+        .setAuthor(`Congratulations ${message.author.username}!`)
+        .setDescription(`<a:ME_pokeball:845921718870736926> Congratulations ${message.author}! You have caught a Level ${poke.level} ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}! You received 10 Craft Coins`)
+        .setThumbnail(user.pokemons[selected].url)
+        .setColor("GREEN")
+                 let embed1 = new MessageEmbed()
+        .setAuthor(`Wrong guess`)
+        .setDescription(`This is the wrong pokémon. Its - ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}`)
+        .setThumbnail(user.pokemons[selected].url)
+        .setColor("RED")
+            message.channel.send(embed);
 
         } else {
-            return message.channel.send(`> This is the wrong pokémon. hint -  ${poke.level} ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}`)
+            return message.channel.send(embed1)
         }
 
     }
