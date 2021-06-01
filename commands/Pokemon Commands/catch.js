@@ -93,7 +93,7 @@ let embed = new MessageEmbed()
         .setColor("GREEN")
                  let embed1 = new MessageEmbed()
         .setAuthor(`Wrong guess`)
-        .setDescription(`This is the wrong pokémon. Its - ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}`)
+        .setDescription(`Wrong guess or you have done a typo`)
         .setThumbnail(user.pokemons[selected].url)
         .setColor("RED")
             message.channel.send(embed);
