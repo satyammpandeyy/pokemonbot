@@ -33,9 +33,9 @@ module.exports = {
 
     let embed = new MessageEmbed()
       .setAuthor(`Your Redeems: ${user.redeems}`)
-      // .addField(`∙ ${prefix}redeem <Pokemon Name>`, 'Redeem any Pokemon of your choice with random stats.')
-      .addField(`∙ ${prefix}redeem spawn <Pokemon Name>`, 'Redeem Spawn any Pokemon of your choice with random stats.')
-      .addField(`∙ ${prefix}redeem cc`, 'Claim 25000 craft coins for your Redeem.')
+      .addField(`∙redeem pokemon <Pokemon Name>`, 'Redeem any Pokemon of your choice with random stats.')
+      .addField(`redeem spawn <Pokemon Name>`, 'Redeem Spawn any Pokemon of your choice with random stats.')
+      .addField(`redeem cc`, 'Claim 25000 craft coins for your Redeem.')
       .setColor("#fff200")
       .setFooter("Redeem once used wont be refunded. Be careful while using them. You cannot directly Redeem shinies.")
 
@@ -52,6 +52,81 @@ module.exports = {
       user.redeems = user.redeems - 1;
       await user.save();
       return message.channel.send(embed2)
+    }
+else if(args[0].toLowerCase() === "pokemon"){
+   if (user.redeems <= 0) return message.channel.send("You don't have enough Redeems.");
+      user.redeems = user.redeems - 1;
+      if (!args[1]) return message.channel.send(`No Pokemon Name Received.\`${prefix}redeem get <pokemon>\``)
+      if (!isNaN(args[1])) return message.channel.send("You cannot redeem Pokemons using Integers!");
+
+      const Name = args.slice(1).join('-')
+      let name = Name
+      let url;
+
+      var gene8 = gen8.find(r => r.name === name);
+      // var shad = shadow.find(r => r.name === name.toLowerCase().replace("shadow-", ""));
+      var gg = galar.find(r => r.name === name.toLowerCase().replace("galarian-", ""));
+
+      if (gg) {
+        url = gg.url;
+        let lvl = Math.floor(Math.random() * 50)
+        let poke = new Pokemon({ name: Name, url: url }, lvl);
+        poke = await classToPlain(poke);
+        let embed2 = new MessageEmbed()
+        .setDescription(`Congratulations ${message.author}! You have used your Redeem and claimed a **${capitalize(name).replace("-"," ")}** (${poke.totalIV}% IV).`)
+        .setFooter(`Redeems Left: ${user.redeems - 1} `)
+        .setColor(color)
+        let msg = await message.channel.send(`Confirm to Redeem a **${capitalize(name).replace("-"," ")}**? (y/N)`);
+        const collector = msg.channel.createMessageCollector(m => ["yes", "no", "y", "n"].includes(m.content.toLowerCase()) && user.id === message.author.id, { time: 30000 });
+
+        collector.on('collect', async (collected) => {
+          if (collected.content.toLowerCase() === "yes" || collected.content.toLowerCase() === "y") {
+            await user2.pokemons.push(poke);
+            await user2.save();
+            collector.stop();
+            return message.channel.send(embed2)
+          }
+          if (collected.content.toLowerCase() === "no" || collected.content.toLowerCase() === "n") {
+            collector.stop();
+            return message.channel.send("Ok Cancelled!");
+          }
+        });
+        collector.on('end', collected => {
+          return msg.reactions.removeAll();
+        });
+      }
+      
+      else if (gene8) {
+        url = gene8.url;
+        let lvl = Math.floor(Math.random() * 50)
+        let poke = new Pokemon({ name: Name, url: url }, lvl);
+        poke = await classToPlain(poke);
+        let embed2 = new MessageEmbed()
+        .setDescription(`Congratulations ${message.author}! You have used your Redeem and claimed a **${capitalize(name).replace("-"," ")}** (${poke.totalIV}% IV).`)
+    
+        .setColor(color)
+        let msg = await message.channel.send(`Confirm to Redeem a **${capitalize(name).replace("-"," ")}**? (y/N)`);
+        const collector = msg.channel.createMessageCollector(m => ["yes", "no", "y", "n"].includes(m.content.toLowerCase()) && user.id === message.author.id, { time: 30000 });
+
+        collector.on('collect', async (collected) => {
+          if (collected.content.toLowerCase() === "yes" || collected.content.toLowerCase() === "y") {
+            await user2.pokemons.push(poke);
+            await user2.save();
+            collector.stop();
+            return message.channel.send(embed2)
+          }
+          if (collected.content.toLowerCase() === "no" || collected.content.toLowerCase() === "n") {
+            collector.stop();
+            return message.channel.send("Ok Cancelled!");
+          }
+        });
+        collector.on('end', collected => {
+          return msg.reactions.removeAll();
+        });
+      }
+      else{
+        return;
+      }
     }
 
     if (args[0].toLowerCase() == "spawn" || "s") {
@@ -83,9 +158,9 @@ module.exports = {
         await spawn.save()
         let embed3 = new MessageEmbed()
           .setAuthor("A wild pokémon has appeared!")
-          .setDescription("Guess the pokemon and type `p!catch <pokémon#name>` to catch it!")
+          .setDescription(`Guess the pokemon and type ${guild.prefix}catch <pokémonname> to catch it!`)
           .setImage(url)
-          .setColor("BLACK")
+          .setColor("RANDOM")
           .setFooter(`Redeem spawn`)
         // user.redeems = user.redeems - 1
         await user.save();
@@ -111,10 +186,10 @@ module.exports = {
           await spawn.save()
           let embed3 = new MessageEmbed()
             .setAuthor("A wild pokémon has appeared!")
-            .setDescription("Guess the pokemon and type `p!catch <pokémon name>` to catch it!")
+            .setDescription("Guess the pokemon and type `catch <pokémon name>` to catch it!")
             .setImage(url)
-            .setColor("00FFFF")
-            .setFooter(`Redeemed by ${message.author.tag}`)
+            .setColor("RANDOM")
+           
           // user.redeems = user.redeems - 1
 
           await user.save();
@@ -169,10 +244,10 @@ module.exports = {
 
 
             let embed3 = new MessageEmbed()
-              .setAuthor("A Pokémon has been Redeemed!")
+              .setAuthor("A Pokémon has been Appread!")
               .setDescription(`Guess the Pokémon and type \`${prefix}catch <pokémon#name>\` to catch it!`)
               .setImage(url)
-              .setColor("BLACK")
+              .setColor("RANDOM")
  
             await user.save();
             return message.channel.send(embed3)
@@ -186,3 +261,4 @@ module.exports = {
     }
   }
 }
+ 

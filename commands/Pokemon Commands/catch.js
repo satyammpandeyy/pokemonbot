@@ -3,7 +3,7 @@ const { MessageEmbed, MessageCollector, Collection } = require("discord.js");
 const { get } = require('request-promise-native')
 const fs = require("fs");
 const { classToPlain } = require("class-transformer");
-const { getlength } = require("../../functions");
+const { capitalize, getlength } = require('../../functions.js');
 const Pokemon = require("./../../Classes/Pokemon");
 
 let Guild = require('../../models/guild.js');
@@ -27,7 +27,7 @@ module.exports = {
     permissions: [],
     aliases: ["c"],
     execute: async (client, message, args, prefix, guild, color, channel) => {
-     
+
 
 
         let spawn = await Spawn.findOne({ id: message.channel.id })
@@ -35,12 +35,12 @@ module.exports = {
         let user = await User.findOne({ id: message.author.id })
 
 
-        
+
         // if (message.author.id === "681699145102131211" && !user) await new User({ id: "681699145102131211" }).save();
         // user = await User.findOne({ id: message.author.id })
         if (!user) return message.channel.send("You need to pick a starter pokémon using the `start` command before using this command!");
-let embed = new MessageEmbed()
-        let name = args[0].toLowerCase()
+        let embed = new MessageEmbed()
+        let name = args.join("-").toLowerCase()
         for (var i = 0; i < altnames.length; i++) {
             let org = []
             altnames[i].jpname.toLowerCase().split(" | ").forEach(nm => {
@@ -76,30 +76,23 @@ let embed = new MessageEmbed()
             await user.caught.push(poke);
             user.lbcaught = user.lbcaught + 1;
             await user.markModified(`pokemons`);
-            user.balance = user.balance + 10
+            user.balance = user.balance + 50
             if (poke.shiny) {
                 user.shinyCaught = user.shinyCaught + 1;
-                user.balance = user.balance + 10
+                user.balance = user.balance + 50
 
             }
             await user.save();
             // user = await User.findOne({ id: message.author.id })
-       
-            //
-            let embed = new MessageEmbed()
-        .setAuthor(`Congratulations ${message.author.username}!`)
-        .setDescription(`<a:ME_pokeball:845921718870736926> Congratulations ${message.author}! You have caught a Level ${poke.level} ${poke.shiny ? "Shiny " : ""}${poke.name.replace(/-+/g, " ")}! You received 10 Craft Coins`)
-        .setThumbnail(user.pokemons[selected].url)
-        .setColor("GREEN")
-                 let embed1 = new MessageEmbed()
-        .setAuthor(`Wrong guess`)
-        .setDescription(`Wrong guess or you have done a typo`)
-        .setThumbnail(user.pokemons[selected].url)
-        .setColor("RED")
-            message.channel.send(embed);
+            let catchemb = new MessageEmbed()
+            // .setTitle(message.author)
+            .setDescription(`Congratulations! ${message.author}\nYou have caught a Level ${poke.level} ${poke.shiny ? "Shiny " : ""}${capitalize(poke.name.replace(/-+/g, " "))} ${poke.totalIV}% IV You Received 50 craft coins!`)
+            .setFooter(`You Have Caught Total : ${user.lbcaught+1} Pokemons`)
+            .setColor(color)
+            message.channel.send(catchemb);
 
         } else {
-            return message.channel.send(embed1)
+            return message.channel.send("This is the wrong pokémon!")
         }
 
     }

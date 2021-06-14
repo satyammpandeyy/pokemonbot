@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 
 
 module.exports = async client => {
-    mongoose.connect(`mongodb://${client.config.mongo_atlas.username}:${client.config.mongo_atlas.password}@${client.config.mongo_atlas.shard.one},${client.config.mongo_atlas.shard.two},${client.config.mongo_atlas.shard.three}/${client.config.mongo_atlas.cluster}?ssl=true&replicaSet=${client.config.mongo_atlas.cluster}-shard-0&authSource=admin&retryWrites=true`, { useNewUrlParser: true, useUnifiedTopology: true }).then(async mon => {
+    mongoose.connect(`mongodb://admin:7QI8M1O6M3MRRKVH@n7.danbot.host:1563/?authSource=admin`, { useNewUrlParser: true, useUnifiedTopology: true }).then(async mon => {
         await console.log(`Connected to the database!`);
     }).catch((err) => {
         console.log("Unable to connect to the Mongodb Database. Error:" + err, "error")

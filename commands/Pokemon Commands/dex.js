@@ -61,7 +61,7 @@ module.exports = {
             const embeddex = new Discord.MessageEmbed()
                 .setAuthor(`${message.author.username}'s Pokedex`)
                 .setColor(color)
-                .setDescription(`**Dex Count**: ${dex.length}\n**Dex Entries**: ${n}\n\n*Nothing to show in this page.*`)
+                .setDescription(`**Total Pokemon **: ${dex.length}\n**Caught Pokemon's**: ${n}\n\n*Nothing to show in this page.*`)
             let txt = []
             for (let i = 0; i < dex.length; i++) {
                 for (let a = 0; a < user.caught.length; a++) {

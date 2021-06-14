@@ -3,29 +3,39 @@ module.exports = {
         let array = require("fs").readFileSync("./db/tips.txt").toString().trim().split("\n").map(r => r.trim());
         return array[Math.floor(Math.random() * array.length)]
     },
-    logChannel: "840164615781351424",
-    bugchannelid: "840164615781351424",
-    feedbackchannelid: "840164615781351424",
-    tradechannelid: "840164615781351424",
-    suggestionchannelid: "840164615781351424",
+    logChannel: "849321384248344657",
+    bugchannelid: "849321384248344657",
+    feedbackchannelid: "849321384248344657",
+    tradechannelid: "849321384248344657",
+    suggestionchannelid: "849321384248344657",
 
-    token: "ODQwMTA2OTgzNzM4ODM0OTU0.YJTYmQ.VJUKFRvrDT8DQy2dYls4VPGR_4o",
+    token: "ODQwNTc5MTQ0NTI1MDIxMTg1.YJaQVQ.h-HHYi6t9DwRLMknLAbGbVF82Us",
     prefix: ".",
 
     banAppeal: "",
-    owners: ["636158569338634272","838653637395349504","799347403340906537","585022194623447050","413370607036661770","773406008650760202","592949366881255436","791577215980404758"],
-    /*satyam, Spidey, yamato , Anshu,Savage,Demon,Agam,Sarthal*/
+       owners: ["636158569338634272","778911797054930955","830009589331787786","592949366881255436","413370607036661770","832811911552696332","773406008650760202","778911797054930955","585022194623447050"],
+
+
+   
     asliMalik: ["636158569338634272"],
     dbdevs: ["636158569338634272"],
    
-   mongo_atlas: {
-        username: "meitu",
-        password: "meitu1234",
-        cluster: "meitu",
-        shard: {
-            one: "meitu-shard-00-00.nyrmd.mongodb.net:27017",
-            two: "meitu-shard-00-01.nyrmd.mongodb.net:27017",
-            three: "meitu-shard-00-02.nyrmd.mongodb.net:27017" 
+  mongo_atlas: {
+
+       username: "niceuser",
+
+       password: "nicepassword",
+
+       cluster: "cluster0",
+
+      shard: {
+
+        one: "cluster0-shard-00-00.0knyp.mongodb.net:27017",
+
+           two: "cluster0-shard-00-02.0knyp.mongodb.net:27017",
+
+           three: "cluster0-shard-00-03.0knyp.mongodb.net:27017"
+
        }
     },
     webhooks: {

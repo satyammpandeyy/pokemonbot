@@ -40,7 +40,7 @@ module.exports = {
         if(pokelvl + amount > 100) return message.channel.send('You can Not Level up your Pokémon more than 100!')
         let embed = new MessageEmbed()
         .setAuthor("Shop Buy Candy")
-        .setDescription(`Hello ${message.author.username}\n\n\n**Your Cur. Balance**: ${user1.balance} ツ\n**After Balance**: ${user1.balance} - ${amount} X 75 = ${user1.balance-amount*75} ツ\n**Your Cur. Pokemon Level**: ${pokelvl}\n**After Pokemon Level**: ${pokelvl} + ${amount} = ${pokelvl + amount}\n\nPlease confirm if you would like to buy ${amount} Candies for ${amount*75} ツ. React with ✅ to Confirm or ❌ to Cancel.`)
+        .setDescription(` ${message.author.username}\n\n\n**Your Cur. Balance**: ${user1.balance} \n**After Balance**: ${user1.balance} - ${amount} X 75 = ${user1.balance-amount*75} \n**Your Cur. Pokemon Level**: ${pokelvl}\n**After Pokemon Level**: ${pokelvl} + ${amount} = ${pokelvl + amount}\n\nPlease confirm if you would like to buy ${amount} Candies for ${amount*75} . React with ✅ to Confirm or ❌ to Cancel.`)
         .setColor(0x00f9ff)
         if (user1.balance <= amount*75) return message.channel.send(`You don't have enough Balance to buy ${amount} Candies!`);
         let msg = await message.channel.send(embed);

@@ -265,66 +265,37 @@ module.exports = {
             }
 
         }
-        else if (args[0] === "list" || args[0] === "l") {
-            // return message.channel.send('Command is under development')
-            if (isNaN(args[1])) return message.channel.send(`Invalid Pokémon#id provided. It should be in the form of \`${prefix}auction list <pokemon#id> <auction_timeout> [buyout]\``);
-            let num = parseInt(args[1]) - 1;
+      
+    else if (args[0].toLowerCase() === "bid") {
+      let auction = await Auction.find({});
+      let bid = parseInt(args[2]);
+      let user1 = User.findOne({ id: message.author.id })
+      if (isNaN(args[1]) || !auction[parseInt(args[1]) - 1]) return message.channel.send(`Invalid auction number provided`);
 
-            if (!user.pokemons[num]) return message.channel.send('Unable to find that Pokémon in your Pokedex Collection.');
+      let num = parseInt(args[1]) - 1;
 
-            if (user.pokemons.length < 2) return message.channel.send('You cannot list your only Pokemon.');
+      let check = await Auction.findOne({ id: user.id, pokemon: auction[num].pokemon, bid: auction[num].bid });
 
-            //if(isNaN(args[2])) {
-            //return message.channel.send('Invalid Ricks amount provided. It should be in the form of \`${prefix}auction list <pokemon#id> <auction_timeout> [buyout]\`');
-            //}
-            let x = parseInt(ms(args[2]))
-            if (!ms(args[2])) return message.channel.send('Provide the time in correct method')
-            let t = Date.now() + ms(args[2]);
-            if(x>259200000) return message.channel.send('You cannot place your pokemon more than 3 days in auction hub')
-          
-            let newDoc = new Auction({
-                id: message.author.id,
-                pokemon: user.pokemons[num],
-                time: t,
-                bid: 0,
-                user: user.id
-            });
+      if (check) return message.channel.send(`You can't bid your own pokemon`);
+      if (auction[num].bid >= bid) return message.channel.send("You cannot bid lower than current")
+      // if(auction[num].user = user.id) return message.channel.send('You cannot bid until someone bids more than you')
+      let userD = client.users.cache.get(auction[num].user)
+      let userx = await User.findOne({ id: auction[num].user })
+      userx.balance = userx.balance + auction[num].bid
+      if (!auction[num].bid === 0) await userD.send(`You bid has been outbidded on ${num} auction id`)
+      await userx.save()
 
-            user.pokemons.splice(args[1] - 1, 1);
+      user1.balance = user1.balance - bid
+      await user.save()
+          if (auction[num].bid > user1.balance) {
+       return message.channel.send(`You don't have enough cc to bid on Level ${auction[num].pokemon.level} ${auction[num].pokemon.name}`)
+     }
+      await Auction.findOneAndUpdate({ id: auction[num].id }, { bid: bid }, { user: user1.id });
+      return message.channel.send(`Successfully Bidded`);
+    }
 
-            await user.save().catch(e => console.log(e));
-
-            await newDoc.save().catch(e => console.log(e));
-
-            return message.channel.send(`Successfully Listed the pokemon on Auction Hub`);
-
-        }
-
-        else if (args[0].toLowerCase() === "bid") {
-            let auction = await Auction.find({});
-            let bid = parseInt(args[2]);
-            let user1 = User.findOne({id: message.author.id})
-            if (isNaN(args[1]) || !auction[parseInt(args[1]) - 1]) return message.channel.send(`Invalid auction number provided`);
-
-            let num = parseInt(args[1]) - 1;
-
-            let check = await Auction.findOne({ id: user.id, pokemon: auction[num].pokemon, bid: auction[num].bid });
-
-            if (check) return message.channel.send(`You can't bid your own pokemon`);
-            if (auction[num].bid >= bid) return message.channel.send("You cannot bid lower than current")
-            // if(auction[num].user = user.id) return message.channel.send('You cannot bid until someone bids more than you')
-            let userD = client.users.cache.get(auction[num].user)
-            let userx = await User.findOne({ id: auction[num].user })
-            userx.balance = userx.balance + auction[num].bid
-            if(!auction[num].bid === 0)        await userD.send(`You bid has been outbidded on ${num} auction id`)
-            await userx.save()
-           
-            user1.balance = user1.balance - bid
-            await user.save()
-         
-            await Auction.findOneAndUpdate({ id: auction[num].id }, { bid: bid }, { user: user1.id });
-            return message.channel.send(`Successfully Bidded`);
-          }
+       
+     
         if(args[0].toLowerCase()==='info'||"i"){
           let auction = await Auction.find({});
           //let user = await auction.find({id: user.id}); 

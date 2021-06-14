@@ -29,4 +29,4 @@ client.on("ready", async () => {
   }
 
 });
-client.login("ODQwNTc5MTQ0NTI1MDIxMTg1.YJaQVQ.cMzG4JogKF0_K29OZfsG68btAWg")
+client.login("ODQwNTc5MTQ0NTI1MDIxMTg1.YJaQVQ.B2D-Wx4kl6Oyp4_4K_dXrvYlrpg")

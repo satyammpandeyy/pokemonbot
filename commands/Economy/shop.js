@@ -24,7 +24,7 @@ module.exports = {
 
         let embed = new MessageEmbed()
             .setColor(color)
-            .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} CC`)
+            .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} cc`)
             .setDescription(`See a specific page of shop by using the shop ${prefix}shop <page number> command.`)
             .addField("Shop Page 1", 'XP Boosters & Rare Candies')
             .addField("Shop Page 2", 'Rare Stones & Evolution Items')
@@ -43,13 +43,13 @@ module.exports = {
 
         let embed1 = new MessageEmbed()
             .setColor(color)
-            .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ツ\nShop 1 (1/2) - XP Boosters`)
+            .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} \nShop 1 (1/2) - XP Boosters`)
             .setDescription("Get XP boosters to increase your XP gain from chatting and battling.")
             .addField("30 Mins - 2X Multiplier | Cost: 20 ", `**Usage**: \`${prefix}shopbuy 1 30min\``)
             .addField("1 Hour - 2X Multiplier | Cost: 40 ", `**Usage**: \`${prefix}shopbuy 1 1hour\``)
             .addField("2 Hours - 2X Multiplier | Cost: 70 ", `**Usage**: \`${prefix}shopbuy 1 2hour\``)
             .addField("3 Hours - 2X Multiplier | Cost: 90 ", `**Usage**: \`${prefix}shopbuy 1 3hour\``)
-            .setThumbnail(client.user.displayAvatarURL())
+          
 
         let embed01 = new MessageEmbed()
             .setColor(color)
@@ -61,7 +61,7 @@ module.exports = {
 
         let embed2 = new MessageEmbed()
             .setColor(color)
-            .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} CC\nShop 2 - Rare Stones & Evolution Items`)
+            .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} cc\nShop 2 - Rare Stones & Evolution Items`)
             .setDescription("Some pokémon don't evolve through leveling and need an evolution stone or high friendship to evolve. Here you can find all the evolution stones as well as a friendship bracelet for friendship evolutions.\n\n**All these items cost 150 cc.**")
             .addField("Dawn Stone", '-', true)
             .addField("Dusk Stone", '-', true)
@@ -109,7 +109,7 @@ module.exports = {
         let embed4 = new MessageEmbed()
             .setColor(color)
             .setAuthor(`Balance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} CC\nShop 4 - Held Items`)
-            .setDescription("Buy items for your pokémon to hold using `p!shop 4 buy item <item name>`\n\n**All these items cost 75 ツ**")
+            .setDescription("Buy items for your pokémon to hold using `shop 4 buy item <item name>`\n\n**All these items cost 75 cc**")
             .addField("King's Rock", 'Held item for your Pokémon.', true)
             .addField("Deep Sea Tooth", 'Held item for your Pokemon', true)
             .addField("Deep Sea Scale", 'Held item for your Pokemon', true)
@@ -139,7 +139,7 @@ module.exports = {
 
         let embed6 = new MessageEmbed()
             .setAuthor(`Shards: ${user.shards.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} \nBalance: ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} \nShop 6 (1/2) - Exchange Shards`)
-            .setDescription("Incase you are not donator and you want Shards Premium currency , you can exchange your balance ツ with Shards.")
+            .setDescription("Incase you are not donator and you want Shards Premium currency , you can exchange your balance  with Shards.")
             .addField("5000 Balance cc - 3 Shards", `${prefix}shopbuy 6 3sh`)
             .addField("10000 Balance cc - 10 Shards", `${prefix}shopbuy 6 10sh`)
             .addField("20000 Balance cc - 25 Shards", `${prefix}shopbuy 6 25sh`)
@@ -448,25 +448,25 @@ module.exports = {
                 if (args[2].toLowerCase() == "mew") {
                     let smew = new MessageEmbed()
                         .setAuthor("Mew Shadow Transformation")
-                        .setDescription("All Shadow Pokémon costs TBD Currency")
+        
                         .addField("Shadow Mew", `\`${prefix}shopbuy 10 form form shadow\``)
                         .setColor(color)
-                        .setThumbnail("https://imgur.com/hEz19J2.png")
+                
                     message.channel.send(smew)
                 }
                 else if (args[2].toLowerCase() == "mewtwo" || args[2].toLowerCase() == "mewtu") {
                     let smew2 = new MessageEmbed()
                         .setAuthor("Mewtwo Shadow Transformation")
-                        .setDescription("All Shadow Pokémon costs 10,000 ツ.")
+                        .setDescription("All Shadow Pokémon costs 10,000 .")
                         .addField("Shadow Mewtwo", `\`${prefix}shopbuy 10 form form shadow\``)
                         .setColor(color)
-                        .setThumbnail("https://i.imgur.com/MqNFAzN.png")
+                  
                     message.channel.send(smew2)
                 }
                 else if (args[2].toLowerCase() == "solgaleo") {
                     let ssolgaleo = new MessageEmbed()
                         .setAuthor("Solgaleo Shadow Transformation")
-                        .setDescription("All Shadow Pokémon costs 10,000 ツ.")
+                        .setDescription("All Shadow Pokémon costs 10,000 .")
                         .addField("Shadow Solgaleo", `\`${prefix}shopbuy 10 form form shadow\``)
                         .setColor(color)
                         .setThumbnail("https://i.imgur.com/ww7RPnp.png")
@@ -475,7 +475,7 @@ module.exports = {
                 else if (args[2].toLowerCase() == "celebi") {
                     let scelebi = new MessageEmbed()
                         .setAuthor("Celebi Shadow Transformation")
-                        .setDescription("All Shadow Pokémon costs 10,000 ツ.")
+                        .setDescription("All Shadow Pokémon costs 10,000 .")
                         .addField("Shadow Celebi", `\`${prefix}shopbuy 10 form form shadow\``)
                         .setColor(color)
                         .setThumbnail("https://imgur.com/5R6fc2j.png")
@@ -484,7 +484,7 @@ module.exports = {
                 else if (args[2].toLowerCase() == "lugia") {
                     let slugia = new MessageEmbed()
                         .setAuthor("Lugia Shadow Transformation")
-                        .setDescription("All Shadow Pokémon costs 10,000 ツ.")
+                        .setDescription("All Shadow Pokémon costs 10,000 .")
                         .addField("Shadow Lugia", `\`${prefix}shopbuy 10 form form shadow\``)
                         .setColor(color)
                         .setThumbnail("https://i.imgur.com/Lm5capk.png")
@@ -514,7 +514,7 @@ module.exports = {
                         .setAuthor("Eternatus Gigantamax Evolution")
                         .setDescription("All Eternatus Gigantamax costs 25,000 .")
                         .addField("Gigantamax Eternatus", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/4pZHWaw3E28hrmEUn4Q7TOgYbMmCvPCKVFJoJqgaST0/https/i.imgur.com/lLFd7xr.png")
+                  
                         .setColor(color)
                     return message.channel.send(eternatus)
                 }
@@ -524,7 +524,7 @@ module.exports = {
                         .setDescription("All Venusaur Gigantamax costs 25,000 .")
                         .addField("Gigantamax Venusaur", `\`${prefix}shopbuy 10 form gigantamax\``)
                         .setColor(color)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/Jj1ETbqHhb8ZTdoefrMV2-kpI3YHHgKdk09B2qCEVok/https/i.imgur.com/tW9netH.png?width=517&height=517")
+                     
                     return message.channel.send(venusaur)
                 }
                 else if (args[2].toLowerCase() == "charizard") {
@@ -532,7 +532,7 @@ module.exports = {
                         .setAuthor("Charizard Gigantamax Evolution")
                         .setDescription("All Charizard Gigantamax costs 25,000 .")
                         .addField("Gigantamax Charizard", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-2.discordapp.net/external/l9_nArqcsBhIL8KgfoUn-T1FxHt2eeU5MJQCg8yxdBQ/https/i.imgur.com/HX2u4kx.png")
+                       
                         .setColor(color)
                     return message.channel.send(charizard)
                 }
@@ -541,7 +541,7 @@ module.exports = {
                         .setAuthor("Blastoise Gigantamax Evolution")
                         .setDescription("All Blastoise Gigantamax costs 25,000 .")
                         .addField("Gigantamax Blastoise", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-2.discordapp.net/external/nNf4FrJQJum9o2Dlu_G72_nE_4uZDZZxkjni1_MG5i0/https/i.imgur.com/XabTPZE.png?width=593&height=517")
+                     
                         .setColor(color)
                     return message.channel.send(blastoise)
                 }
@@ -550,7 +550,7 @@ module.exports = {
                         .setAuthor("Butterfree Gigantamax Evolution")
                         .setDescription("All Butterfree Gigantamax costs 25,000 .")
                         .addField("Gigantamax Butterfree", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/twqGMINB_zru2dvv4-bVoXNtYBsxXb_SKo6KHlWX--I/https/i.imgur.com/6IIeJcG.png")
+                      
                         .setColor(color)
                     return message.channel.send(butterfree)
                 }
@@ -559,7 +559,7 @@ module.exports = {
                         .setAuthor("Pikachu Gigantamax Evolution")
                         .setDescription("All Pikachu Gigantamax costs 25,000 .")
                         .addField("Gigantamax Pikachu", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-2.discordapp.net/external/bJpcidZ4pDmbNwt5hJZbpU74lAOnockRbnBDerDAc0E/https/i.imgur.com/XHqjzdm.png?width=388&height=517")
+                   
                         .setColor(color)
                     return message.channel.send(pikachu)
                 }
@@ -568,8 +568,7 @@ module.exports = {
                         .setAuthor("Meowth Gigantamax Evolution") 
                         .setDescription("All Meowth Gigantamax costs 25,000 .")
                         .addField("Gigantamax Meowth", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/DyaNXmt6rFdZrPuYVP-XzRVR9ghbJgtR-_Mt71Tdxlw/https/i.imgur.com/FZQ5wRZ.png?width=331&height=517")
-                        .setColor(color)
+                  
                     return message.channel.send(meowth)
                 }
                 else if (args[2].toLowerCase() == "machamp") {
@@ -577,7 +576,7 @@ module.exports = {
                         .setAuthor("Machamp Gigantamax Evolution")
                         .setDescription("All Machamp Gigantamax costs 25,000 .")
                         .addField("Gigantamax Machamp", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/uhEfGxoz_cIKUajkH84QMIZxzXAbcFbe1RSraDJm5p0/https/i.imgur.com/0H7jUUA.png")
+           
                         .setColor(color)
                     return message.channel.send(machamp)
                 }
@@ -586,7 +585,7 @@ module.exports = {
                         .setAuthor("Gengar Gigantamax Evolution")
                         .setDescription("All Gengar Gigantamax costs 25,000 .")
                         .addField("Gigantamax Gengar", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/aOhkz_Dr7bl09h-T93QVSuqFwNQ7RDD9TRPywir6a_Q/https/i.imgur.com/zLC4TQD.png?width=517&height=517")
+        
                         .setColor(color)
                     return message.channel.send(gengar)
                 }
@@ -595,7 +594,7 @@ module.exports = {
                         .setAuthor("Kingler Gigantamax Evolution")
                         .setDescription("All Kingler Gigantamax costs 25,000 .")
                         .addField("Gigantamax Kingler", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/8bjdnPFcAIW5tdWfplZim_YQIglGny_psiPN6cBR4LE/https/i.imgur.com/GSxYe7G.png")
+            
                         .setColor(color)
                     return message.channel.send(kingler)
                 }
@@ -604,8 +603,7 @@ module.exports = {
                         .setAuthor("Lapras Gigantamax Evolution")
                         .setDescription("All Lapras Gigantamax costs 25,000 .")
                         .addField("Gigantamax Lapras", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/K-Di4iFDXiGF9HjrGLhyV-9GRVLXBSd5RnozjtbcMk4/https/i.imgur.com/gz94Xq7.png")
-                        .setColor(color)
+                     
                     return message.channel.send(lapras)
                 }
                 else if (args[2].toLowerCase() == "eevee") {
@@ -613,8 +611,7 @@ module.exports = {
                         .setAuthor("Eevee Gigantamax Evolution")
                         .setDescription("All Eevee Gigantamax costs 25,000 .")
                         .addField("Gigantamax Eevee", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/LgvPejDI-CJTBBcAkGODESPUf_fremjOB9-_7bFvRKQ/https/i.imgur.com/UHDrxug.png?width=517&height=517")
-                        .setColor(color)
+               
                     return message.channel.send(eevee)
                 }
                 else if (args[2].toLowerCase() == "snorlax") {
@@ -622,8 +619,7 @@ module.exports = {
                         .setAuthor("Snorlax Gigantamax Evolution")
                         .setDescription("All Snorlax Gigantamax costs 25,000 .")
                         .addField("Gigantamax Snorlax", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/8rBQ4bvHguoFpheUsFWwWG4qYcUcB246a2-kALTNkfg/https/i.imgur.com/dVcH0Hm.png")
-                        .setColor(color)
+             
                     return message.channel.send(snorlax)
                 }
                 else if (args[2].toLowerCase() == "garbodor") {
@@ -631,7 +627,7 @@ module.exports = {
                         .setAuthor("Garbodor Gigantamax Evolution")
                         .setDescription("All Garbodor Gigantamax costs 25,000 .")
                         .addField("Gigantamax Garbodor", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-1.discordapp.net/external/j1lk5RY0v549hTXW8SwB3y4MFJTvzTUvWpQlWEcHDM0/https/i.imgur.com/5EAZf0R.png")
+         
                         .setColor(color)
                     return message.channel.send(garbodor)
                 }
@@ -640,7 +636,7 @@ module.exports = {
                         .setAuthor("Melmetal Gigantamax Evolution")
                         .setDescription("All Melmetal Gigantamax costs 25,000 .")
                         .addField("Gigantamax Melmetal", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-2.discordapp.net/external/k_H0658XHbWsUSS6YSIlh53moYU5QOmxhN9-foO33pE/https/i.imgur.com/KlBItU7.png?width=517&height=517")
+  
                         .setColor(color)
                     return message.channel.send(melmetal)
                 }
@@ -649,7 +645,7 @@ module.exports = {
                         .setAuthor("Rillaboom Gigantamax Evolution")
                         .setDescription("All Rillaboom Gigantamax costs 25,000 .")
                         .addField("Gigantamax Rillaboom", `\`${prefix}shopbuy 10 form gigantamax\``)
-                        .setThumbnail("https://images-ext-2.discordapp.net/external/0p4wQOWsytsyUDCaZ1bllD5UT816vzSiYZcrJG6e-cY/https/i.imgur.com/IeHRxvP.png?width=920&height=517")
+                      
                         .setColor(color)
                     return message.channel.send(rillaboom)
                 }

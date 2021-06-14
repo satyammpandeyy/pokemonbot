@@ -31,7 +31,7 @@ module.exports = {
 .addField("Get the Total Shinies Leaderboard",`Usage: \`${prefix}leaderboard shiny\``)
 
 
-.setColor("#00FFFF")
+.setColor("RED")
  if (!args[0]) return message.channel.send(embed);
 
 else if (args[0].toLowerCase() ==="cc"){
@@ -143,7 +143,7 @@ else if (args[0].toLowerCase() ==="cc"){
             .setTitle("Pokemons Released Leaderboard");
 
         if (res.length === 0){
-            leaderboardEmbed.setColor('#FF0000');
+            leaderboardEmbed.setColor('RED');
             leaderboardEmbed.setDescription('No results were found!')
         }
         else if (res.length < 10){
@@ -157,7 +157,7 @@ else if (args[0].toLowerCase() ==="cc"){
                     leaderboard.push(`\`${i + 1}\` • **${user.tag}** • \`${res[i].released} Released\`\n`);
                 }
             }
-           leaderboardEmbed.setColor("#FF7F50");
+           leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         else{
@@ -170,7 +170,7 @@ else if (args[0].toLowerCase() ==="cc"){
                     leaderboard.push(`\`${i + 1}\` • **${user.tag}** • \`${res[i].released} Released\`\n`);
                 }
             }
-            leaderboardEmbed.setColor("#FF7F50");
+            leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         message.channel.send(leaderboardEmbed);
@@ -202,7 +202,7 @@ else if (args[0].toLowerCase() ==="cc"){
                     leaderboard.push(`\`${i + 1}\` • **${user.tag}** • \`${res[i].streak} Votes\`\n`);
                 }
             }
-           leaderboardEmbed.setColor("#FF7F50");
+           leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         else{
@@ -234,7 +234,7 @@ else if (args[0].toLowerCase() ==="cc"){
             .setTitle("Shards Leaderboard");
 
         if (res.length === 0){
-            leaderboardEmbed.setColor('#FF0000');
+            leaderboardEmbed.setColor('RED');
             leaderboardEmbed.setDescription('No results were found!')
         }
         else if (res.length < 10){
@@ -248,7 +248,7 @@ else if (args[0].toLowerCase() ==="cc"){
                     leaderboard.push(`\`${i + 1}\` • **${user.tag}** • \`${res[i].shards} Shards\`\n`);
                 }
             }
-           leaderboardEmbed.setColor("#FF7F50");
+           leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         else{
@@ -261,7 +261,7 @@ else if (args[0].toLowerCase() ==="cc"){
                     leaderboard.push(`\`${i + 1}\` • **${user.tag}** • \`${res[i].shards} Shards\`\n`);
                 }
             }
-            leaderboardEmbed.setColor("#FF7F50");
+            leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         message.channel.send(leaderboardEmbed);
@@ -279,7 +279,7 @@ else if (args[0].toLowerCase() ==="upvotes"){
             .setTitle("Upvotes Leaderboard");
 
         if (res.length === 0){
-            leaderboardEmbed.setColor('#FF0000');
+            leaderboardEmbed.setColor('RED');
             leaderboardEmbed.setDescription('No results were found!')
         }
         else if (res.length < 10){
@@ -306,7 +306,7 @@ else if (args[0].toLowerCase() ==="upvotes"){
                     leaderboard.push(`\`${i + 1}\` • **${user.tag}** • \`${res[i].upvotes} Upvs\`\n`);
                 }
             }
-            leaderboardEmbed.setColor("#FF7F50");
+            leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         message.channel.send(leaderboardEmbed);
@@ -324,7 +324,7 @@ else if (args[0].toLowerCase() ==="redeems" || args[0].toLowerCase() ==="redeem"
             .setTitle("Redeems's Leaderboard");
 
         if (res.length === 0){
-            leaderboardEmbed.setColor('#FF0000');
+            leaderboardEmbed.setColor('RED');
             leaderboardEmbed.setDescription('No results were found!')
         }
         else if (res.length < 10){
@@ -338,7 +338,7 @@ else if (args[0].toLowerCase() ==="redeems" || args[0].toLowerCase() ==="redeem"
                     leaderboard.push(`\`${i + 1}\` • ${user.tag} • \`${res[i].redeems} Redeems\`\n`);
                 }
             }
-           leaderboardEmbed.setColor("#FF7F50");
+           leaderboardEmbed.setColor("RED");
             leaderboardEmbed.setDescription(leaderboard);
         }
         else{
@@ -366,7 +366,7 @@ else if (args[0].toLowerCase() ==="shiny" || args[0].toLowerCase() ==="shinies")
         if (err) console.log(err);
 
         let leaderboardEmbed = new MessageEmbed()
-            .setTitle("Redeems's Leaderboard");
+            .setTitle("Shiny's Leaderboard");
 
         if (res.length === 0){
             leaderboardEmbed.setColor('#FF0000');

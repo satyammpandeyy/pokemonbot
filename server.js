@@ -44,4 +44,19 @@ for (const event of events) {
 }
 
 xyz = [];
-require('./index.js')
+const c = require("./config.json");
+client.on("ready", () => {
+  console.log("Launched bot !")
+});
+
+//New Webhook
+/*
+    client.statusHook = new Discord.WebhookClient(c.webhookID, c.webhookToken)
+
+//Shard ready
+client.on("shardReady", async shard => {
+    client.statusHook.send("<a:online:846362354727911465> bot is online ")
+})
+*/
+
+//Shard resume

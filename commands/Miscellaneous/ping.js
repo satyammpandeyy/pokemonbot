@@ -28,13 +28,12 @@ let user = await User.findOne({id: message.author.id})
 let end = Date.now();
 let ping2 = end - start;
 
-    let embed = new MessageEmbed()
-    .setDescription(` Bot ping is **${ping}ms**.\nAPI Latency is **${Math.round(client.ws.ping)}ms.**\nData Base  Ping is **${ping2}ms**\nBot Is running Form: **${hours}h ${minutes}m ${seconds}s**`)
+ 
 
 
 
-		.setColor("GREEN")
-    return message.channel.send(embed);
+
+    return message.channel.send(`Pong! Data Base  Ping is **${ping2}ms**`);
 
 	}
 }

@@ -20,7 +20,7 @@ let Gen8 = require('../db/gen8.js')
 let altnames = require("../db/altnames.js");
 const spawn = require("../models/spawn.js");
 const { set } = require("mongoose");
-let color = '#FFA500 ';
+let color = '#00ffff';
 
 const common = fs.readFileSync("./db/common.txt").toString().trim().split("\n").map(r => r.trim());
 const alolan = fs.readFileSync("./db/alolans.txt").toString().trim().split("\n").map(r => r.trim());
@@ -61,10 +61,10 @@ module.exports = async (client, message) => {
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     if ([`<@${client.user.id}>`, `<@!${client.user.id}>`].includes(message.content) && !args[0]) {
-        if (guild.blacklist == true) return message.channel.send("This server has been blacklisted. Join support server to appeal.");
-        if (user && user.blacklist == true) return message.channel.send("You have been blacklisted. Join support server to appeal.");
+        if (guild.blacklist == true) return message.channel.send("This server has been blacklisted. Join support server to appeal  https://discord.gg/q9uJ7zA6gb .");
+        if (user && user.blacklist == true) return message.channel.send("You have been blacklisted. Join support server to appeal https://discord.gg/q9uJ7zA6gb .");
         let embed = new MessageEmbed()
-            .setDescription(`HII`)
+        
             .addField("Bot Prefix", `The current prefix for this server is \`${prefixs[0]}\``)
             .addField("Invite The Bot", `**[Click Here!](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=2147871809&scope=bot)**`)
             .addField("Support Server:", `**[Click Here!](https://discord.gg/fEb4Rfkmjp)**`)
@@ -76,12 +76,12 @@ module.exports = async (client, message) => {
     const command = args.shift().toLowerCase();
     const cmd = client.commands.get(command) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(command));
     if (message.content.startsWith(prefix) && guild.blacklist == true) return message.channel.send("This server has been blacklisted. Join support server to appeal.");
-    if (user && user.blacklist == true && message.content.startsWith(prefix)) return message.channel.send("You have been blacklisted. Join support server to appeal.");
+    if (user && user.blacklist == true && message.content.startsWith(prefix)) return message.channel.send("You have been blacklisted. Join support server to appeal https://discord.gg/q9uJ7zA6gb .");
     if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
     if (cmd) {
         prefix = prefixs[0]
-        if (cmd.category.toLowerCase() == "dev" && !client.config.owners.includes(message.author.id)) return message.reply(`This command can only be used by ${client.user.username} Owners.`)
+        if (cmd.category.toLowerCase() == "dev" && !client.config.owners.includes(message.author.id)) return message.reply(`<a:bsdk:851712017503879198> you are not my owner idiot`)
         if (cmd.category.toLowerCase() === "Dev2" && !client.config.asliMalik.includes(message.author.id)) return message.channel.reply(`This command can only be used by ${client.user.username} Owners.`);
         if (cmd.category == "Testing" && !client.config.owners.includes(message.author.id)) return message.reply("This command is under maintenance. Please check back later");
         if (cmd.args && !args.length) return message.channel.send(`See \`${capitalize(prefix)}help ${capitalize(cmd.name)}\` for more information on how to use the ${capitalize(cmd.name)} Command.`);
@@ -91,7 +91,7 @@ module.exports = async (client, message) => {
         cmd.execute(client, message, args, prefix, guild, color, channel).catch(err => {
             if ([`versionerror`, `no matching document`, `missing permissions`].includes(err.message.toLowerCase())) return;
             /* if (err.message.includes(`404 - "Not Found"`)) return message.channel.send("This Pokémon doesn't seem to appear in the Pokedex or maybe you spelled it wrong!"); */
-            console.log("HII")
+      
             //message.reply('There Was An Error While Trying To Execute ' + command + ' Command!```xl\n' + err + '```**Report This Error To Devs**');
         })
          log(`[${message.guild.name}/#${message.channel.name}] ${message.author.username} (${message.author.id}): ${prefix}${command} ${args.join(" ")}`)
@@ -213,24 +213,24 @@ async function spawnPokemon(message, client) {
             if (shinyDb.find(r => r.name.toLowerCase() === Name.toLowerCase())) url = shinyDb.find(r => r.name === Name).url;
         }
       
-   let x=50,y=90;
+   let x=100,y=100;
         let bg;
         let shadow = true;
-        if (Type.toLowerCase().startsWith("bug")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg", shadow = false;
-        if (Type.toLowerCase().startsWith("water")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845975148448317450/anastasia-taioglou-CTivHyiTbFw-unsplash.jpg", shadow = false;
-        if (Type.toLowerCase().startsWith("rock")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845876369275092992/IMG_20210523_093915.jpg",y=120, shadow = false;
+        if (Type.toLowerCase().startsWith("bug")) bg = "https://media.discordapp.net/attachments/853522935364321284/853570523263270932/new.png", shadow = false;
+        if (Type.toLowerCase().startsWith("water")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851826672185770034/IMG_20210608_194442.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("rock")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg",y=120, shadow = false;
         if (Type.toLowerCase().startsWith("flying")) bg = "https://cdn.discordapp.com/attachments/845193133100105756/845193150695079976/rffw88nr-1354076846.png", shadow = false;
-        if (Type.toLowerCase().startsWith("grass")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/846368819588104242/dapo-oni-64tVc0A2_xQ-unsplash.jpg", shadow = false;
-        if (Type.toLowerCase().startsWith("normal")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/846368819588104242/dapo-oni-64tVc0A2_xQ-unsplash.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("grass")) bg = "https://media.discordapp.net/attachments/853522935364321284/853570523263270932/new.png", shadow = false;
+        if (Type.toLowerCase().startsWith("normal")) bg = "https://media.discordapp.net/attachments/853522935364321284/853570523263270932/new.png", shadow = false;
         if (Type.toLowerCase().startsWith("steel")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg";
-        if (Type.toLowerCase().startsWith("ice")) bg = "https://cdn.discordapp.com/attachments/840106525371793451/847866684982427679/v2osk-d-OQYiy1gQo-unsplash.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("ice")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851826207649169418/IMG_20210608_194256.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("electric")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/846372312352948244/lightning.jpg";
-        if (Type.toLowerCase().startsWith("ground")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845876369275092992/IMG_20210523_093915.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("ground")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851825385469116457/IMG_20210608_193934.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("fairy")) bg = "https://i.imgur.com/Rb6aOwO.jpg";
-        if (Type.toLowerCase().startsWith("bug")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg", shadow = false;
-        if (Type.toLowerCase().startsWith("ghost")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845878462613815306/jr-korpa-tzQkuviIuHU-unsplash.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("bug")) bg = "https://media.discordapp.net/attachments/853522935364321284/853570523263270932/new.png", shadow = false;
+        if (Type.toLowerCase().startsWith("ghost")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851827081800318986/IMG_20210608_194625.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("fire")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845876368737828904/ed037afd6a9c1c8c93e4bf8048e34603fe02ed11r1-1024-671v2_hq.jpg";
-        if (Type.toLowerCase().startsWith("psychic")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845878462613815306/jr-korpa-tzQkuviIuHU-unsplash.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("psychic")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851829360117415936/IMG_20210608_195515.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("figthing")) bg = "https://cdn.discordapp.com/attachments/845192128208699452/845192151675174932/fight.png", shadow = false;
         if (Type.toLowerCase().startsWith("dark")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845878462613815306/jr-korpa-tzQkuviIuHU-unsplash.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("dragon")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845878295622713364/a043bc570949f5f039c3dec5dea65d39.jpg";
@@ -257,22 +257,16 @@ async function spawnPokemon(message, client) {
         context.drawImage(time, 0, 0, canvas.width, canvas.height)
      // message.channel.send("Oh Ho You were Traveling And It Seems Like You have found a Pokemon")
         let embed = new MessageEmbed()
-//.setAuthor("")
+.setAuthor("A Wild Pokémon appeared")
           
-  //  .setDescription("")
+    .setDescription(`Guess the pokémon and type ${guild.prefix}catch to catch it!`)
             .attachFiles([{ name: "new.png", attachment: canvas.toBuffer() }])
             .setImage("attachment://"+ "new.png")
-  .setFooter(``)          .setColor(message.guild.me.displayHexColor)
+        .setColor(message.guild.me.displayHexColor)
        
         
         
-             
-        //  spawnCooldown.add(message.channel.id)
-        // spawnCooldown.add(message.guild.id)
-
-        if (scool.has(message.channel.id)) return;
-        await channel.send(`**A Wild Pokemon Is appearing soon type ${guild.prefix}catch <name> to catch it**`)
-        
+     if (scool.has(message.channel.id)) return;
         await channel.send(embed);
         spawn.pokemon = []
         spawn.pokemon.push(poke)
@@ -312,30 +306,32 @@ async function leveling(message, client) {
     if (user.blacklist) return;
     let selected = user.selected;
     let poke = user.pokemons[selected];
-    if (!poke) return
+    if (!poke) return console.log("No poke found");
     //if (xpCooldown.has(message.author.id)) return;
-
     const guild = await Guild.findOne({ id: message.guild.id });
-
-    if (guild.disabledChannels.includes(message.channel.id)) return;
-    if (!channel) return;
     let prefix = guild.prefix;
     if (message.content.startsWith(`${prefix}`)) return;
     if (poke.level == 100) return;
     let curxp = poke.xp;
-    let x = Math.floor((Math.random() * 50)) + 50
+    if (poke.level < 20) {
+        x = Math.floor((Math.random() * 10)) + 20
+    }
+    if (poke.level > 10 && poke.level < 50) {
+        x = Math.floor((Math.random() * 200)) + 50
+    }
+    if (poke.level > 51) {
+        x = Math.floor((Math.random() * 300)) + 50
+    }
     let newXp = curxp + x;
-    //xpCooldown.add(message.author.id);
     let lvl = poke.level;
     let embed9 = new MessageEmbed()
         .setAuthor(`Congratulations ${message.author.username}!`)
-        .setDescription(`Your ${capitalize((user.pokemons[selected].name).replace(/-+/g, " "))}${(user.pokemons[selected].shiny ? " ⭐" : "")} has Leveled up to ${poke.level + 1}.`)
+        .setDescription(`Your ${user.pokemons[selected].shiny ? "⭐" : ""} ${capitalize(user.pokemons[user.selected].name)} has Leveled up to ${poke.level + 1}.`)
         .setThumbnail(user.pokemons[selected].url)
         .setColor(color)
 
     var n = parseInt(poke.level)
     let neededXp = (1.2 * n ^ 3) - (15 * n ^ 2) + (100 * n) - 140;
-  
     if (user.blacklist) return;
     if (newXp > neededXp) {
         poke.level = lvl + 1;
@@ -343,6 +339,8 @@ async function leveling(message, client) {
         user.pokemons[selected] = poke;
         await user.markModified(`pokemons`);
         await user.save();
+
+
 
         for (var i = 0; i < levelUp.length; i++) {
             if (poke.name.toLowerCase() == levelUp[i].name.toLowerCase() && poke.level > levelUp[i].levelup) {
@@ -355,8 +353,7 @@ async function leveling(message, client) {
             }
         }
         //   setTimeout(() => xpCooldown.delete(message.author.id), 30000)
-        if (guild.levelupbtn) return message.author.send(embed9);
-        else if(!guild.levelupbtn) return message.channel.send(embed9)
+        return message.channel.send(embed9)
     } else {
         poke.xp = newXp;
         user.pokemons[selected] = poke;
