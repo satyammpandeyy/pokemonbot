@@ -49,7 +49,7 @@ module.exports = {
         }
     },
     dbl: {
-        authorization: "test"
+        authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg0MDU3OTE0NDUyNTAyMTE4NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNjIzOTQxNjM5fQ.i253uh6oI11n1NONhav08Pv1cdyDryOkKyF891H06g4"
     },
     cooldown: 3000
 }
