@@ -944,7 +944,7 @@ module.exports = {
           embed
             .setAuthor(`${message.author.tag}'s Market Listings`)
             .setColor('#05f5fc')
-            .setDescription(chunks[0].map((r, i) => `**Level ${r.pokemon.level} ${(r.pokemon.shiny ? "⭐" : "")}${r.pokemon.name.replace(/-+/g, " ").replace(/\b\w/g, l => l.toUpperCase())}** | ID: ${r.num} | IV: ${r.pokemon.totalIV}% | Price: ${new Intl.NumberFormat('en-IN').format(r.price)} ツ`).join('\n') || "There is no pokemon in market")
+            .setDescription(chunks[0].map((r, i) => `**Level ${r.pokemon.level} ${(r.pokemon.shiny ? "⭐" : "")}${r.pokemon.name.replace(/-+/g, " ").replace(/\b\w/g, l => l.toUpperCase())}** | ID: ${r.num} | IV: ${r.pokemon.totalIV}% | Price: ${new Intl.NumberFormat('en-IN').format(r.price)} cc`).join('\n') || "There is no pokemon in market")
             .setFooter(`Showing 1-1 of ${all.length} pokémon matching this search.`);
           message.channel.send(embed)
         }
