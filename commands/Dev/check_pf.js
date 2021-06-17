@@ -49,7 +49,7 @@ module.exports = {
       .setColor("#fff200")
       .setAuthor(`${user1.username}'s Profile`)
       .setDescription(
-        `| **Balance:** ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ツ \n`
+        `| **Balance:** ${user.balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} cc \n`
         + `| **Redeems:** ${user.redeems}\n`
         + ` | **Shards**: ${user.shards.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}\n`
         + ` | **Pokemons Caught:** ${user.caught.length || 0} \n`
