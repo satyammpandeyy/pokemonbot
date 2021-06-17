@@ -101,7 +101,7 @@ module.exports = {
                 url: `https://top.gg/api/bots/${client.user.id}/check?userId=${message.author.id}`,
                 json: true,
                 headers: {
-                    'Authorization': `${client.config.dbl.authorization}`
+                    'Authorization': `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg0MDU3OTE0NDUyNTAyMTE4NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNjIzOTQxNjM5fQ.i253uh6oI11n1NONhav08Pv1cdyDryOkKyF891H06g4`
                 }
             };
             let t = await get(options);
