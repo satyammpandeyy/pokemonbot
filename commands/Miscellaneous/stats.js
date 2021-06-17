@@ -39,6 +39,7 @@ devs = devs.splice(0,3);
       }).join("\n"))
    .addField("Default Prefix", `\`${prefix}\``, true)
       .addField("Bot Currency", `\`cc (craft coins)\``, true)
+ .addField("🛰 Memory Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() /1024 /1024).toFixed(2)} MB`, true)
       .addField("Uptime", `\`${hours}h ${minutes}m ${seconds}s\``, true)
  .addField("Others", " [INVITE ME](https://discord.com/api/oauth2/authorize?client_id=840579144525021185&permissions=67226625&scope=bot) | [SUPPORT SERVER](https://discord.gg/YVhqK7ak3z)",true)
     .setThumbnail(client.user.displayAvatarURL())
