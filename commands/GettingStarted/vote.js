@@ -91,7 +91,7 @@ module.exports = {
         timeleft = timeleft.replace("m", " minute(s)");
         timeleft = timeleft.replace("h", " hour(s)");
 
-        if (daily.time >= Date.now()) return message.channel.send(embed.setDescription(`**[Vote for the bot up to every 12 hours to gain rewards!](https://google.com)** Voting for the bot multiple days in a row will increase your streak and give you a chance at better rewards!\n\n**You've already voted today, come back in ${timeleft} to vote!**`))
+        if (daily.time >= Date.now()) return message.channel.send(embed.setDescription(`**[Vote for the bot up to every 12 hours to gain rewards!](https://top.gg/bot/840579144525021185/vote)** Voting for the bot multiple days in a row will increase your streak and give you a chance at better rewards!\n\n**You've already voted today, come back in ${timeleft} to vote!**`))
         amount = amount.rewards
         amount = amount[Math.floor(Math.random() * amount.length)];
 
