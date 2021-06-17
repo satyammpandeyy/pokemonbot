@@ -33,7 +33,7 @@ let ping2 = end - start;
 
 
 
-    return message.channel.send(`Pong! Data Base  Ping is **${ping2}ms**`);
+    return message.channel.send(`Pong! Latency: **${ping2}ms Bot: ${ping}ms**`);
 
 	}
 }
