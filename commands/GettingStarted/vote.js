@@ -81,9 +81,9 @@ module.exports = {
         let embed = new MessageEmbed()
             .setAuthor("Voting Rewards")
             .setDescription(`**Vote for the bot up to every 12 hours to gain rewards! https://top.gg/bot/840579144525021185/vote** Voting for the bot multiple days in a row will increase your streak and give you a chance at better rewards!\n\n**You haven't voted yet today! Vote Now! https://top.gg/bot/840579144525021185/vote**`)
-            .addField("Voting Streak", streak)
-            .addField("Common Crate ", stuffs)
-            .setColor("RED")
+            
+       
+            .setColor("GREEN")
             .setFooter("Once your vote is received, the bot will automatically send you a DM and give you your rewards.")
 
         let timeleft = ms(daily.time - Date.now());
