@@ -81,7 +81,7 @@ module.exports = async (client, message) => {
 
     if (cmd) {
         prefix = prefixs[0]
-        if (cmd.category.toLowerCase() == "dev" && !client.config.owners.includes(message.author.id)) return message.reply(`<a:bsdk:851712017503879198> you are not my owner idiot`)
+        if (cmd.category.toLowerCase() == "dev" && !client.config.owners.includes(message.author.id)) return message.reply(`<a:bsdk:851712017503879198> you are not my owner`)
         if (cmd.category.toLowerCase() === "Dev2" && !client.config.asliMalik.includes(message.author.id)) return message.channel.reply(`This command can only be used by ${client.user.username} Owners.`);
         if (cmd.category == "Testing" && !client.config.owners.includes(message.author.id)) return message.reply("This command is under maintenance. Please check back later");
         if (cmd.args && !args.length) return message.channel.send(`See \`${capitalize(prefix)}help ${capitalize(cmd.name)}\` for more information on how to use the ${capitalize(cmd.name)} Command.`);
@@ -216,18 +216,18 @@ async function spawnPokemon(message, client) {
    let x=100,y=100;
         let bg;
         let shadow = true;
-        if (Type.toLowerCase().startsWith("bug")) bg = "https://cdn.discordapp.com/attachments/853888483919003648/853959317845573652/roman-wimmers-AG9K1yABNGg-unsplash_2.jpg", shadow = true;
+        if (Type.toLowerCase().startsWith("bug")) bg = "https://cdn.discordapp.com/attachments/845169966864400424/845191611247886386/d4bkb17-8e7eda09-2b22-4953-b672-96012e314a62.png", shadow = true;
         if (Type.toLowerCase().startsWith("water")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851826672185770034/IMG_20210608_194442.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("rock")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg",y=120, shadow = false;
         if (Type.toLowerCase().startsWith("flying")) bg = "https://cdn.discordapp.com/attachments/845193133100105756/845193150695079976/rffw88nr-1354076846.png", shadow = false;
-        if (Type.toLowerCase().startsWith("grass")) bg = "https://cdn.discordapp.com/attachments/853888483919003648/853959317845573652/roman-wimmers-AG9K1yABNGg-unsplash_2.jpg", shadow = false;
-        if (Type.toLowerCase().startsWith("normal")) bg = "https://cdn.discordapp.com/attachments/853888483919003648/853959317845573652/roman-wimmers-AG9K1yABNGg-unsplash_2.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("grass")) bg = "https://cdn.discordapp.com/attachments/845169966864400424/845191611247886386/d4bkb17-8e7eda09-2b22-4953-b672-96012e314a62.png", shadow = false;
+        if (Type.toLowerCase().startsWith("normal")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg";
         if (Type.toLowerCase().startsWith("steel")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845875885865041930/mike-blank-JWa5jZ1LkJY-unsplash.jpg";
         if (Type.toLowerCase().startsWith("ice")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851826207649169418/IMG_20210608_194256.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("electric")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/846372312352948244/lightning.jpg";
         if (Type.toLowerCase().startsWith("ground")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851825385469116457/IMG_20210608_193934.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("fairy")) bg = "https://i.imgur.com/Rb6aOwO.jpg";
-        if (Type.toLowerCase().startsWith("bug")) bg = "https://cdn.discordapp.com/attachments/853888483919003648/853959317845573652/roman-wimmers-AG9K1yABNGg-unsplash_2.jpg", shadow = false;
+        if (Type.toLowerCase().startsWith("bug")) bg = "https://cdn.discordapp.com/attachments/853888483919003648/853959317845573652/roman-wimmers-AG9K1yABNGg-unsplash_2.jpg";
         if (Type.toLowerCase().startsWith("ghost")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851827081800318986/IMG_20210608_194625.jpg", shadow = false;
         if (Type.toLowerCase().startsWith("fire")) bg = "https://cdn.discordapp.com/attachments/844390398687707157/845876368737828904/ed037afd6a9c1c8c93e4bf8048e34603fe02ed11r1-1024-671v2_hq.jpg";
         if (Type.toLowerCase().startsWith("psychic")) bg = "https://cdn.discordapp.com/attachments/849927302468599808/851829360117415936/IMG_20210608_195515.jpg", shadow = false;
