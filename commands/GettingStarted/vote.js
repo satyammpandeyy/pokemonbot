@@ -48,7 +48,7 @@ module.exports = {
     usage: ["vote"],
     cooldown: 3,
     permissions: [],
-    aliases: [],
+    aliases: ["daily"],
 
     async execute(client, message, args, prefix, guild, color, channel) {
         
