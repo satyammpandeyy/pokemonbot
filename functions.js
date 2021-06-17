@@ -31,8 +31,8 @@ module.exports = {
         if (type.toLowerCase() === "cmd") {
             const webhookClient = new WebhookClient(webhooks.cmd.ID, webhooks.cmd.Token);
             webhookClient.send({
-                username: "Pok",
-                avatarURL: "",
+                username: "Pokecraft - commands logs",
+                avatarURL: "https://cdn.discordapp.com/avatars/840579144525021185/4ca1238359198d85b6d74da3365cfa84.png?size=256",
                 embeds: [
                     {
                         description: content,
@@ -44,8 +44,8 @@ module.exports = {
         if (type.toLowerCase() === "guild") {
             const webhookClient = new WebhookClient(webhooks.guild.ID, webhooks.guild.Token);
             webhookClient.send(".", {
-                username: "Poké",
-                avatarURL: "",
+                username: "Pokécraft - guild logs",
+                avatarURL: "https://cdn.discordapp.com/avatars/840579144525021185/4ca1238359198d85b6d74da3365cfa84.png?size=256",
                 embeds: [content]
             });
         }
