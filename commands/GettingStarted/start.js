@@ -34,8 +34,8 @@ module.exports = {
       .addField(`Generation VII (Alola)`, `Rowlet · Litten · Popplio`)
       .addField(`Generation VIII (Galar)`, `Grookey · Scorbunny · Sobble`)
       .setColor("#fff200")
-      .setFooter(`Hope you enjoy the ${client.user.username} Bot and make sure you join the Bot's Official Server to stay updated about the Bot!`)
-      .setImage("https://cdn.discordapp.com/attachments/853888483919003648/853909021189603389/images_11.jpeg")
+      
+      .setImage("https://cdn.discordapp.com/attachments/832971783674003487/854357391843131402/sY8w0zz.png")
 
     return message.channel.send(embed)
   }
