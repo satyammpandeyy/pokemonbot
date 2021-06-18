@@ -9,7 +9,7 @@ module.exports = {
     tradechannelid: "849321384248344657",
     suggestionchannelid: "849321384248344657",
 
-    token: "ODQwNTc5MTQ0NTI1MDIxMTg1.YJaQVQ.A_CYYNkoiL6oInST40pb7hi3oqw",
+    token: "ODQwNTc5MTQ0NTI1MDIxMTg1.YJaQVQ.A_CY cYNkoiL6oInST40pb7hi3oqw",
     prefix: "p!",
 
     banAppeal: "",
