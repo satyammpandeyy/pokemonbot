@@ -12,7 +12,7 @@ client.on("ready", async () => {
 
   console.log("bot is now ready");
 
-  const API = new DanBotHosting.Client("danbot-6lye3g", client);
+  const API = new DanBotHosting.Client("", client);
 
  
 
