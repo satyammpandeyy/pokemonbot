@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////////////////////// THIS WAS FIXED BUT STILL IF IT DOSE NOT WORK PLEASE CREATE A ISSUE////////////////
+
 const Discord = require("discord.js");
 const { MessageEmbed, MessageCollector, Collection } = require("discord.js");
 const { get } = require('request-promise-native');
