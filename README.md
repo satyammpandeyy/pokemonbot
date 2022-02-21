@@ -28,4 +28,4 @@ invite bot https://discord.com/oauth2/authorize?client_id=840579144525021185&per
 
 
 
-support server https://discord.gg/SavMraP7kd
+support server https://discord.gg/pokesoul 
