@@ -8,7 +8,7 @@
         "server": "nodemon index.js"
     },
     "keywords": [],
-    "author": "Yash",
+    "author": "Pokesoul INC",
     "license": "ISC",
     "dependencies": {
         "@top-gg/sdk": "^3.1.3",
