@@ -8,7 +8,7 @@
         "server": "nodemon index.js"
     },
     "keywords": [],
-    "author": "sp-sketch",
+    "author": "satyammpandeyy",
     "license": "ISC",
     "dependencies": {
         "@top-gg/sdk": "^3.1.3",
